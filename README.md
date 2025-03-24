@@ -13,7 +13,8 @@ featuring light & dark mode, GetX state management, Supabase authentication, and
 * 📢 Status
 
 ## 📸 Screenshots
-<img src="https://github.com/user-attachments/assets/25be3b42-e8c4-4f82-bdce-04dd37bdc75b" alt="Chat Screen" width="100">
+<a href="https://github.com/Yousef-Sayed-Younis/whatsapp-clone/blob/main/lib/presentation/chat/chat_screen.dart">
+<img src="https://github.com/user-attachments/assets/25be3b42-e8c4-4f82-bdce-04dd37bdc75b" alt="Chat Screen" width="300"></a>
 
 ## 🏗️ Tech Stack
 * Flutter (Dart)
