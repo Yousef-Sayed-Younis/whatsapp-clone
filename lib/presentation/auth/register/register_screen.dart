@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../resources/constants.dart';
+import '../../resources/app_colors.dart';
 import '../../resources/routes.dart';
 import '../base/field_type.dart';
 import '../widgets/custom_text_form_field.dart';
@@ -18,7 +18,7 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   final controller = RegisterController();
-  
+
   @override
   void dispose() => {controller.dispose(), super.dispose()};
 
@@ -26,7 +26,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _buildRegisterBody(),
-      backgroundColor: ConstantColor.backgroundColor,
+      backgroundColor: AppColors.backgroundColor,
     );
   }
 
@@ -50,7 +50,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size.fromHeight(50),
                   maximumSize: Size.fromHeight(150),
-                  backgroundColor: ConstantColor.buttonsColor,
+                  backgroundColor: AppColors.buttonsColor,
                 ),
                 onPressed: () async {
                   if (await controller.authenticate()) {
@@ -75,7 +75,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       Text("Already have an account?", style: TextStyle(fontSize: 15.sp)),
       TextButton(
         onPressed: () => Get.offNamed(NamedRoutes.loginScreen),
-        child: Text("Login", style: TextStyle(fontSize: 16.sp, color: ConstantColor.buttonsColor)),
+        child: Text("Login", style: TextStyle(fontSize: 16.sp, color: AppColors.buttonsColor)),
       )
     ]);
   }

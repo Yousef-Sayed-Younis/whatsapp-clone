@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import '../resources/data.dart';
-import '../resources/images.dart';
+import '../resources/app_images.dart';
 import 'widgets/chat_details_shareable_widgets.dart';
 
 class ChatDetails extends StatefulWidget {
@@ -42,7 +42,7 @@ class _ChatDetailsState extends State<ChatDetails> {
         controller: _sliverScroller,
         slivers: [
           SliverAppBar(
-            leading: IconButton(icon: const Icon(Icons.arrow_back_ios), onPressed: ()=> Get.back()),
+            leading: IconButton(icon: const Icon(Icons.arrow_back_ios), onPressed: () => Get.back()),
             actions: [
               TextButton(onPressed: () {}, child: const Text("Edit", style: TextStyle(color: Colors.black))),
             ],
@@ -56,7 +56,7 @@ class _ChatDetailsState extends State<ChatDetails> {
                 child: Row(
                   spacing: 8,
                   children: [
-                    CustomCircularAvatar(radius: 20, image: NamedImages.profileSoloLeveling),
+                    CustomCircularAvatar(radius: 20, image: AppImages.soloLeveling),
                     CustomText(name: "Mai", size: 18, weight: FontWeight.bold)
                   ],
                 ),
@@ -71,7 +71,7 @@ class _ChatDetailsState extends State<ChatDetails> {
                   visible: _isAvatarVisible,
                   child: Column(
                     children: [
-                      CustomCircularAvatar(image: NamedImages.profileSoloLeveling, radius: 50),
+                      CustomCircularAvatar(image: AppImages.soloLeveling, radius: 50),
                       CustomText(name: "Mai Emad", size: 22, weight: FontWeight.bold)
                     ],
                   ),
@@ -89,9 +89,7 @@ class _ChatDetailsState extends State<ChatDetails> {
                 CustomCards(media: mediaTypes),
                 CustomCards(media: additions),
                 CustomCards(media: contactDetails),
-                Align(
-                    alignment: Alignment.centerLeft,
-                    child: CustomText(name: "group in common", size: 15, weight: FontWeight.w500, padding: 20)),
+                Align(alignment: Alignment.centerLeft, child: CustomText(name: "group in common", size: 15, weight: FontWeight.w500, padding: 20)),
                 CustomCards(media: commonGroup),
                 _buildCardShareInfo(context, shareInfo),
                 _buildCardShareInfo(context, additionalShareInfo)
@@ -109,8 +107,7 @@ class _ChatDetailsState extends State<ChatDetails> {
         child: Column(
             children: ListTile.divideTiles(
           context: context,
-          tiles: List.generate(
-              media.length, (index) => InfoTile(title: media[index].media, subtitle: null, icon: null, color: media[index].color)),
+          tiles: List.generate(media.length, (index) => InfoTile(title: media[index].media, subtitle: null, icon: null, color: media[index].color)),
         ).toList()));
   }
 

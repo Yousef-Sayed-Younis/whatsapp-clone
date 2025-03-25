@@ -3,8 +3,10 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:whatsapp_clone_app/presentation/resources/app_constants.dart';
+import '../resources/app_images.dart';
 
-import '../resources/app_assets.dart';
+import '../resources/app_icons.dart';
 import '../resources/app_colors.dart';
 import '../resources/routes.dart';
 import 'widgets/text_chat_bubble.dart';
@@ -27,7 +29,15 @@ class _ChatScreenState extends State<ChatScreen> {
     (text: "Ooo, yes! Where?", isSender: false),
     (text: "Same! Thinking about grabbing a coffee. ☕ Wanna join?", isSender: true),
     (text: "Not much, just chilling. You?", isSender: false),
-    (text: "Hey! What's up?", isSender: true),
+    // (text: "Hey! What's up?", isSender: true),
+    // (text: "Perfect. See you then! 🚀", isSender: false),
+    // (text: "4 PM?", isSender: true),
+    // (text: "Sold! 😆 What time?", isSender: false),
+    // (text: "How about that new café downtown? Heard they have amazing pastries. 🍩", isSender: true),
+    // (text: "Ooo, yes! Where?", isSender: false),
+    // (text: "Same! Thinking about grabbing a coffee. ☕ Wanna join?", isSender: true),
+    // (text: "Not much, just chilling. You?", isSender: false),
+    // (text: "Hey! What's up?", isSender: true),
   ];
 
   @override
@@ -45,7 +55,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   PreferredSize _buildAppBar() {
     return PreferredSize(
-      preferredSize: Size.fromHeight(48),
+      preferredSize: Size.fromHeight(AppConstants.appBarHeight),
       child: ClipRRect(
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
@@ -73,26 +83,29 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   Widget _buildChatBody() {
-    return Column(
-      children: [
-        Expanded(
-          child: ListView.separated(
-            reverse: true,
-            itemCount: _messages.length,
-            padding: const EdgeInsets.symmetric(vertical: 10),
-            separatorBuilder: (_, __) => const SizedBox(height: 4),
-            itemBuilder: (_, index) => TextChatBubble(message: _messages[index]),
+    return DecoratedBox(
+      decoration: BoxDecoration(image: DecorationImage(fit: BoxFit.cover, image: AssetImage(AppImages.chatBackground))),
+      child: Column(
+        children: [
+          Expanded(
+            child: ListView.separated(
+              reverse: true,
+              itemCount: _messages.length,
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              separatorBuilder: (_, __) => const SizedBox(height: 4),
+              itemBuilder: (_, index) => TextChatBubble(message: _messages[index]),
+            ),
           ),
-        ),
-        _buildBottomBar(),
-      ],
+          _buildBottomBar(),
+        ],
+      ),
     );
   }
 
   Widget _buildBottomBar() {
     return Container(
       height: 60,
-      decoration: BoxDecoration(color: Color(0xFF171717), border: Border(top: BorderSide(width: 0.5, color: Color(0xFF393939)))),
+      decoration: BoxDecoration(color: Color(0xFF171717), border: Border(top: BorderSide(width: .5, color: Color(0xFF393939)))),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [

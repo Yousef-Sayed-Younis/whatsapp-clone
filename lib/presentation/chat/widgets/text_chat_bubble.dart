@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../resources/app_assets.dart';
+import '../../resources/app_icons.dart';
 import '../../resources/app_colors.dart';
 import 'chat_bubble.dart';
 

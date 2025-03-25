@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'constants.dart';
+import 'app_colors.dart';
 
 List chatDetailsTiles = [mediaTypes, additions, shareInfo, additionalShareInfo];
 
@@ -28,14 +28,14 @@ final List<({String media, IconData icon, String? number})> additions = [
 ];
 
 final List<({String media, Color color})> shareInfo = [
-  (media: "Share contact", color: ConstantColor.green),
-  (media: "Add to Favorites", color: ConstantColor.green),
-  (media: "Add to list", color: ConstantColor.green),
-  (media: "Export chat", color: ConstantColor.green),
-  (media: "Clear chat", color: ConstantColor.pink),
+  (media: "Share contact", color: AppColors.green),
+  (media: "Add to Favorites", color: AppColors.green),
+  (media: "Add to list", color: AppColors.green),
+  (media: "Export chat", color: AppColors.green),
+  (media: "Clear chat", color: AppColors.pink),
 ];
 
 final List<({Color color, String media})> additionalShareInfo = [
-  (media: "Block Mai ", color: ConstantColor.pink),
-  (media: "Report Mai", color: ConstantColor.pink),
+  (media: "Block Mai ", color: AppColors.pink),
+  (media: "Report Mai", color: AppColors.pink),
 ];

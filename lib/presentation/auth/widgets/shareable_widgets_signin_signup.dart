@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../resources/images.dart';
+import '../../resources/app_images.dart';
 
 class CustomImage extends StatelessWidget {
   const CustomImage({super.key, required this.width, required this.height});
@@ -8,7 +8,7 @@ class CustomImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset(NamedImages.logo, width: width, height: height);
+    return Image.asset(AppImages.logo, width: width, height: height);
   }
 }
 

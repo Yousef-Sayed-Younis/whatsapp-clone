@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../resources/constants.dart';
+import '../../resources/app_colors.dart';
 import 'widgets/shareable_widget_call_status.dart';
 
 class CallsScreen extends StatelessWidget {
@@ -9,7 +9,7 @@ class CallsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: ConstantColor.secondBackground,
+      backgroundColor: AppColors.secondBackground,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),

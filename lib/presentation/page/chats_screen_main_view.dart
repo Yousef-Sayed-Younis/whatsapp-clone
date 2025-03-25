@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 import '../auth/data/lists/status_list.dart';
 import '../chat/new_chat_selection.dart';
-import '../resources/constants.dart';
+import '../resources/app_colors.dart';
 import '../resources/routes.dart';
 
 class ChatsScreen extends StatelessWidget {
@@ -17,7 +17,7 @@ class ChatsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ConstantColor.secondBackground,
+      backgroundColor: AppColors.secondBackground,
       body: Column(
         children: [
           SizedBox(
@@ -36,7 +36,7 @@ class ChatsScreen extends StatelessWidget {
           Get.to(() => NewChatSelection(contacts: contacts, isGroup: false));
           // Navigator.pushNamed(context, NewChatSelection(isExcit: ""));
         },
-        backgroundColor: ConstantColor.secondaryColor,
+        backgroundColor: AppColors.secondaryColor,
         child: const Icon(Icons.chat, color: Colors.white),
       ),
     );
@@ -56,7 +56,7 @@ class ChatsScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(listStatus[index].time, style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w500)),
-            CircleAvatar(radius: 12.h, backgroundColor: ConstantColor.secondaryColor, child: const Text("2", style: TextStyle(color: Colors.white)))
+            CircleAvatar(radius: 12.h, backgroundColor: AppColors.secondaryColor, child: const Text("2", style: TextStyle(color: Colors.white)))
           ],
         ),
         title: Text(listStatus[index].name, style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.w600)),

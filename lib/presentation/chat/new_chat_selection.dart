@@ -3,7 +3,7 @@ import 'package:flutter_contacts/contact.dart';
 
 import '../auth/data/lists/status_list.dart';
 import '../main/custom_popup_menu_button.dart';
-import '../resources/constants.dart';
+import '../resources/app_colors.dart';
 
 class NewChatSelection extends StatelessWidget {
   final bool isGroup;
@@ -15,7 +15,7 @@ class NewChatSelection extends StatelessWidget {
     return Scaffold(
       body: _buildBody(),
       appBar: _buildAppBar(),
-      backgroundColor: ConstantColor.secondBackground,
+      backgroundColor: AppColors.secondBackground,
       floatingActionButton: isGroup ? _buildFloatingActionButton() : null,
     );
   }
@@ -26,7 +26,7 @@ class NewChatSelection extends StatelessWidget {
         // Get.off(() => ChatScreen(imageUrl: selectedImage!, name: selectedContact!));
         // ModelStatus(name: selectedContact!, image: selectedImage!, time: "");
       },
-      backgroundColor: ConstantColor.secondaryColor,
+      backgroundColor: AppColors.secondaryColor,
       child: const Icon(Icons.arrow_forward, color: Colors.white),
     );
   }
@@ -56,7 +56,7 @@ class NewChatSelection extends StatelessWidget {
     return AppBar(
         elevation: 2,
         shadowColor: Colors.black,
-        backgroundColor: ConstantColor.secondBackground,
+        backgroundColor: AppColors.secondBackground,
         title: const Text("Select Contact", style: TextStyle(fontWeight: FontWeight.w500)),
         actions: const [Icon(Icons.search), CustomPopupMenuButton(text1: "Report", text2: "Block", text3: "Clear chat", text4: "Export chat")]);
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../resources/constants.dart';
+import '../../resources/app_colors.dart';
 import 'controller.dart';
 import 'otp_custom.dart';
 
@@ -30,7 +30,7 @@ class _OtpBodyState extends State<OtpBody> {
     return AppBar(
       backgroundColor: Colors.white,
       title: const Text("Enter OTP Code", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
-      leading: IconButton(onPressed: () => Get.back, icon: const Icon(Icons.arrow_back, color: ConstantColor.secondaryColor)),
+      leading: IconButton(onPressed: () => Get.back, icon: const Icon(Icons.arrow_back, color: AppColors.secondaryColor)),
     );
   }
 

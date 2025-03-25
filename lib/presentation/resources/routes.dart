@@ -17,7 +17,7 @@ class NamedRoutes {
 
   static const String otpScreen = "/otp";
   static const String loginScreen = "/login";
-  static const String profileScreen = "/profile";
+  static const String profileScreen = "/cat";
   static const String registerScreen = "/register";
 
   static const String mainView = "/main";

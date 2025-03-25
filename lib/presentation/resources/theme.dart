@@ -1,17 +1,25 @@
 import 'package:flutter/material.dart';
 
+import 'app_colors.dart';
+
 class AppTheme {
   AppTheme._();
-
+  //
   static ThemeData getTheme() {
     return ThemeData(
-      // scaffoldBackgroundColor: Color(0xfff4f4f4),
-      // //
-      // appBarTheme: AppBarTheme(
-      //   centerTitle: true,
-      //   backgroundColor: Color(0xfff4f4f4),
-      //   iconTheme: IconThemeData(color: Colors.black, size: 20),
-      // ),
+      scaffoldBackgroundColor: AppColors.darkBg,
+
+      appBarTheme: AppBarTheme(
+        backgroundColor: AppColors.darkBg,
+      ),
+
+      iconButtonTheme: IconButtonThemeData(
+        style: ButtonStyle(
+          padding: WidgetStatePropertyAll(EdgeInsets.zero),
+          fixedSize: WidgetStatePropertyAll(Size.square(28)),
+          minimumSize: WidgetStatePropertyAll(Size.square(28)),
+        ),
+      ),
 
       // dividerTheme: DividerThemeData(color: Color(0xffefefef)),
       // //
@@ -22,7 +30,7 @@ class AppTheme {
       //   floatingLabelBehavior: FloatingLabelBehavior.always,
       //   errorBorder: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(5))),
       //   enabledBorder: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(30))),
-      //   focusedBorder: const OutlineInputBorder(borderSide: BorderSide(color: ConstantColor.buttonsColor, width: 2)),
+      //   focusedBorder: const OutlineInputBorder(borderSide: BorderSide(color: AppColors.buttonsColor, width: 2)),
       // ),
 
       fontFamily: "Inter",
@@ -33,6 +41,17 @@ class AppTheme {
         bodyMedium: TextStyle(fontSize: 16, height: 22 / 16, fontWeight: FontWeight.w400), // Sender & Receiver Messages
         bodySmall: TextStyle(fontSize: 12, height: 18 / 12, fontWeight: FontWeight.w400), // Replied Message
         labelSmall: TextStyle(height: 1, fontSize: 12, letterSpacing: 0.24, fontWeight: FontWeight.w400), // Timestamp
+      ),
+
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: AppColors.navBarBg,
+        unselectedItemColor: AppColors.navBarItem,
+        selectedItemColor: AppColors.navBarActiveItem,
+        unselectedLabelStyle: TextStyle(fontSize: 10, letterSpacing: .05, fontWeight: FontWeight.w500, color: AppColors.navBarItem),
+        selectedLabelStyle: TextStyle(fontSize: 10, letterSpacing: .05, fontWeight: FontWeight.w500, color: AppColors.navBarActiveItem),
       ),
     );
   }

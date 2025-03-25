@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../resources/constants.dart';
+import '../resources/app_colors.dart';
 import '../resources/routes.dart';
 
 class CustomPopupMenuButton extends StatelessWidget {
@@ -11,7 +11,7 @@ class CustomPopupMenuButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton(
-      color: ConstantColor.backgroundColor,
+      color: AppColors.backgroundColor,
       itemBuilder: (_) => [
         PopupMenuItem(value: text1, child: Text(text1)),
         PopupMenuItem(value: text2, child: Text(text2)),

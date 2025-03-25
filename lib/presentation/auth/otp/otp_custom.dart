@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../resources/constants.dart';
+import '../../resources/app_colors.dart';
+import '../../resources/app_constants.dart';
 import 'controller.dart';
 
 class OTP extends StatefulWidget {
@@ -44,15 +45,15 @@ class _OTPState extends State<OTP> {
         inputFormatters: [LengthLimitingTextInputFormatter(1)],
         decoration: const InputDecoration(
           hintText: "-",
-          focusColor: ConstantColor.secondaryColor,
+          focusColor: AppColors.secondaryColor,
           errorBorder: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(12)), borderSide: BorderSide(color: Colors.red)),
           focusedErrorBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.red), borderRadius: BorderRadius.all(Radius.circular(12))),
           disabledBorder:
-              OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(12)), borderSide: BorderSide(color: ConstantColor.secondaryColor)),
+              OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(12)), borderSide: BorderSide(color: AppColors.secondaryColor)),
           focusedBorder:
-              UnderlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(12)), borderSide: BorderSide(color: ConstantColor.secondaryColor)),
+              UnderlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(12)), borderSide: BorderSide(color: AppColors.secondaryColor)),
           enabledBorder:
-              OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(12)), borderSide: BorderSide(color: ConstantColor.secondaryColor)),
+              OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(12)), borderSide: BorderSide(color: AppColors.secondaryColor)),
         ),
       ),
     );

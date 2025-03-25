@@ -3,7 +3,7 @@ import 'package:flutter_advanced_avatar/flutter_advanced_avatar.dart';
 import 'package:get/get.dart';
 
 import '../../../auth/data/lists/status_list.dart';
-import '../../../resources/constants.dart';
+import '../../../resources/app_colors.dart';
 import 'story_widget.dart';
 
 class CustomStatusTiles extends StatelessWidget {
@@ -47,6 +47,6 @@ class CustomText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(title, style: const TextStyle(color: ConstantColor.textColor, fontWeight: FontWeight.w700));
+    return Text(title, style: const TextStyle(color: AppColors.textColor, fontWeight: FontWeight.w700));
   }
 }

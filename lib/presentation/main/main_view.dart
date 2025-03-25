@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:whatsapp_clone_app/presentation/resources/app_constants.dart';
 
-import '../resources/constants.dart';
+import '../resources/app_colors.dart';
 import 'custom_popup_menu_button.dart';
 import 'pages/calls_page.dart';
 import 'pages/chats_page.dart';
@@ -20,7 +22,7 @@ class _MainViewState extends State<MainView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _buildAppBar(),
+      // appBar: _buildAppBar(),
       body: pages[currentIndex],
       bottomNavigationBar: _buildBottomNavigationBar(),
     );
@@ -28,10 +30,8 @@ class _MainViewState extends State<MainView> {
 
   AppBar _buildAppBar() {
     return AppBar(
-      elevation: 2,
       shadowColor: Colors.black,
-      backgroundColor: ConstantColor.secondBackground,
-      title: const Text("WhatsApp", style: TextStyle(fontWeight: FontWeight.w500)),
+      title: const Text("WhatsApp"),
       actions: const [Icon(Icons.search), CustomPopupMenuButton(text1: "Setting", text2: "Started", text3: "New Group", text4: "WhatsApp Web")],
     );
   }
@@ -40,15 +40,17 @@ class _MainViewState extends State<MainView> {
     return BottomNavigationBar(
       elevation: 0,
       currentIndex: currentIndex,
-      backgroundColor: ConstantColor.secondBackground,
-      selectedItemColor: ConstantColor.secondaryColor,
       onTap: (index) => setState(() => currentIndex = index),
-      selectedLabelStyle: const TextStyle(color: ConstantColor.secondaryColor, fontWeight: FontWeight.w600),
-      items: const <BottomNavigationBarItem>[
-        BottomNavigationBarItem(icon: Icon(Icons.chat, color: ConstantColor.secondaryColor), label: 'Chats'),
-        BottomNavigationBarItem(icon: Icon(Icons.update_sharp, color: ConstantColor.secondaryColor), label: "Status"),
-        BottomNavigationBarItem(icon: Icon(Icons.call, color: ConstantColor.secondaryColor), label: "Calls")
-      ],
+      items: List.generate(
+        AppConstants.mainNavBar.length,
+        (index) => BottomNavigationBarItem(
+          backgroundColor: AppColors.navBarBg,
+          label: AppConstants.mainNavBar[index].label,
+          icon: SvgPicture.asset(AppConstants.mainNavBar[index].icon, colorFilter: ColorFilter.mode(AppColors.navBarItem, BlendMode.srcIn)),
+          activeIcon:
+              SvgPicture.asset(AppConstants.mainNavBar[index].activeIcon, colorFilter: ColorFilter.mode(AppColors.navBarActiveItem, BlendMode.srcIn)),
+        ),
+      ),
     );
   }
 }

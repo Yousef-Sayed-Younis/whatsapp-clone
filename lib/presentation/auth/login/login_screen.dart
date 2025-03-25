@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../resources/constants.dart';
+import '../../resources/app_colors.dart';
 import '../../resources/routes.dart';
 import '../base/field_type.dart';
 import '../widgets/custom_text_form_field.dart';
@@ -45,7 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size.fromHeight(50),
                   maximumSize: Size.fromHeight(150),
-                  backgroundColor: ConstantColor.buttonsColor,
+                  backgroundColor: AppColors.buttonsColor,
                 ),
                 onPressed: () async {
                   if (mounted) {
@@ -74,7 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
         Text("Don't have an account?", style: TextStyle(fontSize: 15.sp)),
         TextButton(
           onPressed: () => Get.offNamed(NamedRoutes.registerScreen),
-          child: Text("Register", style: TextStyle(fontSize: 16.sp, color: ConstantColor.buttonsColor)),
+          child: Text("Register", style: TextStyle(fontSize: 16.sp, color: AppColors.buttonsColor)),
         )
       ],
     );

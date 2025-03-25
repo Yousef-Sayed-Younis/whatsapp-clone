@@ -3,7 +3,7 @@ import 'package:flutter_advanced_avatar/flutter_advanced_avatar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../auth/data/lists/status_list.dart';
-import '../../resources/constants.dart';
+import '../../resources/app_colors.dart';
 import 'widgets/shareable_widget_call_status.dart';
 
 class StatusScreen extends StatelessWidget {
@@ -42,7 +42,7 @@ class StatusScreen extends StatelessWidget {
         foregroundDecoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(color: Colors.green, width: 3)),
       ),
       title: Text("My Status", style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.w600)),
-      subtitle: Text("tap to add status update", style: TextStyle(fontSize: 15.sp, color: ConstantColor.textColor, fontWeight: FontWeight.w700)),
+      subtitle: Text("tap to add status update", style: TextStyle(fontSize: 15.sp, color: AppColors.textColor, fontWeight: FontWeight.w700)),
     );
   }
 }
