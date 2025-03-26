@@ -3,11 +3,11 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:whatsapp_clone_app/presentation/resources/app_constants.dart';
-import '../resources/app_images.dart';
 
-import '../resources/app_icons.dart';
 import '../resources/app_colors.dart';
+import '../resources/app_constants.dart';
+import '../resources/app_icons.dart';
+import '../resources/app_images.dart';
 import '../resources/routes.dart';
 import 'widgets/text_chat_bubble.dart';
 
@@ -19,7 +19,7 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
-  static final textController = TextEditingController();
+  static final TextEditingController textController = TextEditingController();
 
   static const List<({String text, bool isSender})> _messages = [
     (text: "Perfect. See you then! 🚀", isSender: false),
@@ -29,15 +29,15 @@ class _ChatScreenState extends State<ChatScreen> {
     (text: "Ooo, yes! Where?", isSender: false),
     (text: "Same! Thinking about grabbing a coffee. ☕ Wanna join?", isSender: true),
     (text: "Not much, just chilling. You?", isSender: false),
-    // (text: "Hey! What's up?", isSender: true),
-    // (text: "Perfect. See you then! 🚀", isSender: false),
-    // (text: "4 PM?", isSender: true),
-    // (text: "Sold! 😆 What time?", isSender: false),
-    // (text: "How about that new café downtown? Heard they have amazing pastries. 🍩", isSender: true),
-    // (text: "Ooo, yes! Where?", isSender: false),
-    // (text: "Same! Thinking about grabbing a coffee. ☕ Wanna join?", isSender: true),
-    // (text: "Not much, just chilling. You?", isSender: false),
-    // (text: "Hey! What's up?", isSender: true),
+    (text: "Hey! What's up?", isSender: true),
+    (text: "Perfect. See you then! 🚀", isSender: false),
+    (text: "4 PM?", isSender: true),
+    (text: "Sold! 😆 What time?", isSender: false),
+    (text: "How about that new café downtown? Heard they have amazing pastries. 🍩", isSender: true),
+    (text: "Ooo, yes! Where?", isSender: false),
+    (text: "Same! Thinking about grabbing a coffee. ☕ Wanna join?", isSender: true),
+    (text: "Not much, just chilling. You?", isSender: false),
+    (text: "Hey! What's up?", isSender: true),
   ];
 
   @override
